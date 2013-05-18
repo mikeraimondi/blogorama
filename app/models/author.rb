@@ -7,5 +7,5 @@ class Author < ActiveRecord::Base
   validates_format_of :email, with: /@/
 
   validates_uniqueness_of :facebook, :twitter, allow_blank: true
-  validates_format_of :twitter, with: /^@/
+  validates_format_of :twitter, with: /^@/, allow_blank: true
 end

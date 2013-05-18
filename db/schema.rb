@@ -14,8 +14,8 @@
 ActiveRecord::Schema.define(:version => 20130518164417) do
 
   create_table "authors", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
+    t.string   "name",       :null => false
+    t.string   "email",      :null => false
     t.string   "twitter"
     t.string   "facebook"
     t.datetime "created_at", :null => false
@@ -23,24 +23,24 @@ ActiveRecord::Schema.define(:version => 20130518164417) do
   end
 
   create_table "categories", :force => true do |t|
-    t.string   "name"
+    t.string   "name",        :null => false
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
 
   create_table "comments", :force => true do |t|
-    t.text     "body"
-    t.boolean  "approved",   :default => false
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
+    t.text     "body",       :limit => 50000,                    :null => false
+    t.boolean  "approved",                    :default => false, :null => false
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
   end
 
   create_table "posts", :force => true do |t|
-    t.string   "title"
-    t.text     "body"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "title",                        :null => false
+    t.text     "body",       :limit => 100000, :null => false
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
 end
