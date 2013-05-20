@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(:version => 20130518164417) do
   create_table "posts", :force => true do |t|
     t.string   "title",                        :null => false
     t.text     "body",       :limit => 100000, :null => false
+    t.integer  "author_id"
     t.datetime "created_at",                   :null => false
     t.datetime "updated_at",                   :null => false
   end

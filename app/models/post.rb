@@ -3,4 +3,7 @@ class Post < ActiveRecord::Base
 
   validates_presence_of :body, :title
   validates_length_of :body, maximum: 100000
+
+  belongs_to :author
+  validates_presence_of :author
 end

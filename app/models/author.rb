@@ -8,4 +8,6 @@ class Author < ActiveRecord::Base
 
   validates_uniqueness_of :facebook, :twitter, allow_blank: true
   validates_format_of :twitter, with: /^@/, allow_blank: true
+
+  has_many :posts, :dependent => :destroy
 end
