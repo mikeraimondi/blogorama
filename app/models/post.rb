@@ -6,4 +6,6 @@ class Post < ActiveRecord::Base
 
   belongs_to :author
   validates_presence_of :author
+
+  has_many :comments
 end

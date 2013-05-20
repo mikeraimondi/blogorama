@@ -10,4 +10,5 @@ class Author < ActiveRecord::Base
   validates_format_of :twitter, with: /^@/, allow_blank: true
 
   has_many :posts, :dependent => :destroy
+  has_many :comments, :dependent => :destroy
 end

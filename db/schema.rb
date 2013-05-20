@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(:version => 20130518164417) do
   create_table "comments", :force => true do |t|
     t.text     "body",       :limit => 50000,                    :null => false
     t.boolean  "approved",                    :default => false, :null => false
+    t.integer  "post_id"
+    t.integer  "author_id"
     t.datetime "created_at",                                     :null => false
     t.datetime "updated_at",                                     :null => false
   end
