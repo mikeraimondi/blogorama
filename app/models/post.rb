@@ -8,4 +8,7 @@ class Post < ActiveRecord::Base
   validates_presence_of :author
 
   has_many :comments
+
+  has_many :categorizations
+  has_many :categories, :through => :categorizations
 end

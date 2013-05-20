@@ -8,5 +8,7 @@
 
 author = Author.create(name: "Bob Loblaw", email: "bob_loblaw@lawblog.com")
 post = author.posts.create(title: "Bob Loblaw's Law Blog guest post", body: "Lorem ipsum dolor")
-comment = author.comments.create(body: "Lorem ipsum", post: post)
+comment = author.comments.new(body: "Lorem ipsum")
+comment.post = post
+comment.save
 
